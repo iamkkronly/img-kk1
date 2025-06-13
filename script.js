@@ -1,5 +1,5 @@
 /* --- JAVASCRIPT CODE --- */
-const GEMINI_API_KEY = "AIzaSyCRym6I1qGcwSHKBVQSGcO2j_Iy6crePyw";
+const GEMINI_API_KEY = "AIzaSyBTp2QiZHQ8HeDxgTFNxV3nQcblVwmsngQ";
 
 document.addEventListener('DOMContentLoaded', () => {
     const promptInput = document.getElementById('promptInput');
