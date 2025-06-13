@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             // Display error message if something went wrong
             console.error('Generation failed:', error);
-            errorMessage.textContent = `❌ Generation failed, bro: ${error.message}. Try a different prompt!`;
+            errorMessage.textContent = `❌ Generation failed, bro. Try a different prompt!`;
             errorSection.classList.remove('hidden');
         }
     });
