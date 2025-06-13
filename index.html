@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaustav AI Image Generator (Direct API Access)</title>
+    <style>
+        /* --- CSS STYLES --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #2a2a4a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 700px;
+            margin: 20px 0;
+        }
+
+        h1 {
+            color: #00bcd4;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #00bcd4;
+            border-radius: 8px;
+            background-color: #3a3a5a;
+            color: #e0e0e0;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 100px;
+            box-sizing: border-box;
+        }
+
+        textarea::placeholder {
+            color: #a0a0b0;
+        }
+
+        button {
+            background-color: #00bcd4;
+            color: #1a1a2e;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #00a8bd;
+            transform: translateY(-2px);
+        }
+
+        #resultSection {
+            margin-top: 30px;
+            border-top: 1px solid #4a4a6a;
+            padding-top: 20px;
+        }
+
+        #imageContainer {
+            margin-top: 20px;
+            background-color: #3a3a5a;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        #generatedImage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #textOutput {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #3a3a5a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #textOutput h3 {
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+
+        #textOutput p {
+            color: #c0c0d0;
+            margin-bottom: 0;
+        }
+
+        /* The .hidden class ensures elements are not visible by default */
+        .hidden {
+            display: none;
+        }
+
+        .error-message {
+            color: #ff6347;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kaustav AI: Generate Dope 3D Images</h1>
+        <p>Enter your prompt below, and Kaustav AI will whip up some sick visuals!</p>
+
+        <div class="input-section">
+            <textarea id="promptInput" placeholder="Describe the image you want to generate... e.g., 'a cyberpunk city at night with neon lights'"></textarea>
+            <button id="generateBtn">Generate Image</button>
+        </div>
+
+        <div id="resultSection" class="hidden">
+            <h2>Your Masterpiece:</h2>
+            <div id="imageContainer">
+                <img id="generatedImage" src="" alt="Generated Image">
+            </div>
+            <div id="textOutput">
+                <h3>Kaustav AI says:</h3>
+                <p id="geminiText"></p>
+            </div>
+        </div>
+
+        <div id="errorSection" class="hidden">
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
